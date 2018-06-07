@@ -1,0 +1,9 @@
+<span id="price_span" [hidden]="isUpdating">
+  {{price}} <i class="far fa-edit" (click)="startEditing()"></i>
+</span>
+<span id="price_edit" [hidden]="!isUpdating">
+  <form>
+    <input type="number" [(ngModel)]="price" title="New price" style="width: 5em" [ngModelOptions]="{standalone: true}"/>
+    <button type="submit" (click)="updatePrice()">Save</button>
+  </form>
+</span>

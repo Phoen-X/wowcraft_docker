@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]='[""]'>WowCraft</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav nav-item"><a class="nav-link" [routerLink]='["/reagents"]'>Reagents</a></li>
+    <li class="nav nav-item"><a class="nav-link" [routerLink]='["/recipes"]'>Recipes</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

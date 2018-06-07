@@ -1,0 +1,1 @@
+ALTER TABLE reagents MODIFY price decimal(10,2) NOT NULL;

@@ -1,0 +1,29 @@
+<div class="row" [hidden]="!isAdding">
+  <div class="col-12">
+    <wowcraft-reagent-create (submit)="finishAdding()"></wowcraft-reagent-create>
+  </div>
+</div>
+<div class="row" [hidden]="isAdding">
+  <div class="col-12">
+    <button class="btn btn-primary" (click)="startAddingReagent()">Add new</button>
+  </div>
+</div>
+<div class="row">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr class="table-dark">
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reagent of reagents">
+      <td>{{reagent.name}}</td>
+      <td>
+        <wowcraft-reagent-price [reagent]="reagent"></wowcraft-reagent-price>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

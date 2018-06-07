@@ -1,0 +1,35 @@
+version: "3"
+services:
+  mysql-server:
+    image: mysql:8
+    ports:
+      - 3306
+    volumes:
+      - E:\docker_data\mysql\data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: power13
+
+  wowcraft-proxy:
+    image: wowcraft-proxy:1.0
+    depends_on:
+      - wowcraft-rest
+      - wowcraft-ui
+    ports:
+      - 80:80
+    environment:
+      WOWCRAFT_REST_URL: http://wowcraft-rest:8080
+      WOWCRAFT_UI_URL: http://wowcraft-ui:80
+
+  wowcraft-rest:
+    image: wowcraft-rest:1.0
+    links:
+      - mysql-server
+    depends_on:
+      - mysql-server
+    environment:
+      MYSQL_HOST: mysql-server
+
+  wowcraft-ui:
+    image: wowcraft-ui:1.0
+    depends_on:
+      - wowcraft-rest

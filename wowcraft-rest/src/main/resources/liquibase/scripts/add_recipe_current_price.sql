@@ -1,0 +1,1 @@
+alter table recipe add column current_price decimal(10, 2);
