@@ -5,9 +5,9 @@ services:
     ports:
       - 3306
     volumes:
-      - E:\docker_data\mysql\data:/var/lib/mysql
+      - $MYSQL_DATA_PATH:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: power13
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD
 
   wowcraft-proxy:
     image: wowcraft-proxy:1.0
