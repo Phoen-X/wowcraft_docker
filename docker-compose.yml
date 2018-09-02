@@ -3,7 +3,7 @@ services:
   mysql-server:
     image: mysql:8
     ports:
-      - 3306
+      - 3306:3306
     volumes:
       - $MYSQL_DATA_PATH:/var/lib/mysql
     environment:

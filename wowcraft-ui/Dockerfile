@@ -1,2 +1,4 @@
 FROM nginx:1.13.12
-COPY dist/wowcraft-ui /usr/share/nginx/html
+COPY mime.types /etc/nginx/mime.types
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY dist/wowcraft-ui /app/wowcraft-ui

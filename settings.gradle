@@ -1,0 +1,4 @@
+rootProject.name = 'wowcraft'
+include 'wowcraft-ui'
+include 'wowcraft-rest'
+include 'wowcraft-proxy'
